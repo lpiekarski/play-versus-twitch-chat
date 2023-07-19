@@ -1,3 +1,4 @@
+import os
 import random
 import threading
 import time
@@ -12,11 +13,17 @@ from twitchAPI.types import ChatEvent
 import sqlite3
 from dotenv import load_dotenv
 
-from lichess import API_TOKEN, USERNAME, ACCEPT_CHALLENGE_WAIT_SECONDS, TARGET_CHANNEL, APP_ID, USER_SCOPE, APP_SECRET
+from lichess import ACCEPT_CHALLENGE_WAIT_SECONDS, USER_SCOPE
 import logging
 import asyncio
 
 load_dotenv()
+
+API_TOKEN = os.environ['API_TOKEN']
+USERNAME = os.environ['USERNAME']
+TARGET_CHANNEL = os.environ['TARGET_CHANNEL']
+APP_ID = os.environ['APP_ID']
+APP_SECRET = os.environ['APP_SECRET']
 
 LOGGER = logging.getLogger(__name__)
 

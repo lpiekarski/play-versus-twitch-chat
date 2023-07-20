@@ -18,20 +18,14 @@ SCREEN_WIDTH = 1920
 SCREEN_HEIGHT = 1080
 
 with Display(visible=True) as display:
-    # display is active
-    pass
-# display is stopped
+    chess_bot = Bot()
 
-chess_bot = Bot()
-
-chess_bot_thread = threading.Thread(target=lambda: asyncio.run(chess_bot.start()))
-chess_bot_thread.start()
-
-while True:
-    try:
-        time.sleep(1)
-        asyncio.run(chess_bot.get_active_game())
-    except KeyboardInterrupt:
-        break
-
-
+    chess_bot_thread = threading.Thread(target=lambda: asyncio.run(chess_bot.start()))
+    chess_bot_thread.start()
+    
+    while True:
+        try:
+            time.sleep(1)
+            asyncio.run(chess_bot.get_active_game())
+        except KeyboardInterrupt:
+            break

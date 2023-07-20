@@ -81,7 +81,7 @@ class Bot:
         async def run():
             self.twitch = await Twitch(APP_ID, APP_SECRET)
             auth = UserAuthenticator(self.twitch, USER_SCOPE)
-            token, refresh_token = await auth.authenticate(browser_name='chromedriver')
+            token, refresh_token = await auth.authenticate()
             await self.twitch.set_user_authentication(token, USER_SCOPE, refresh_token)
 
             self.chat = await Chat(self.twitch)

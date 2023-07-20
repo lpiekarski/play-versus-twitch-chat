@@ -1,2 +1,3 @@
 #!/usr/bin/env bash
-sudo apt-get install -y xvfb obs-studio
+sudo apt-get update
+sudo apt-get install -y firefox xvfb obs-studio

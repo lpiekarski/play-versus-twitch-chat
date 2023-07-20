@@ -17,7 +17,7 @@ LOGGER = logging.getLogger(__name__)
 SCREEN_WIDTH = 1920
 SCREEN_HEIGHT = 1080
 
-with Display(visible=True) as display:
+with Display(visible=False, size=(SCREEN_WIDTH, SCREEN_HEIGHT)) as display:
     chess_bot = Bot()
 
     chess_bot_thread = threading.Thread(target=lambda: asyncio.run(chess_bot.start()))
